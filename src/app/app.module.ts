@@ -10,9 +10,11 @@ import {
   MatFormFieldModule,
   MatRadioModule,
   MatSelectModule,
-  MatSidenavModule
+  MatSidenavModule, MatToolbarModule
 } from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatRadioModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule,
+    GraphQLModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

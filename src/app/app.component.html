@@ -1,27 +1,29 @@
 <mat-sidenav-container>
-  <mat-sidenav>Start</mat-sidenav>
+  <mat-sidenav mode="side" opened>
+    <h1>Start</h1>
+  </mat-sidenav>
+
   <mat-sidenav-content>
 
-    <!--The content below is only a placeholder and can be replaced.-->
+    <mat-toolbar>
+      <span>My Application</span>
+    </mat-toolbar>
+
     <div style="text-align:center">
       <h1>
         Welcome to {{ title }}!
       </h1>
-      <!-- Creates a layout with a left-positioned sidenav and explicit content. -->
-      <div>
-        <app-journey></app-journey>
-      </div>
     </div>
+    <app-journey></app-journey>
+
     <mat-radio-group class="example-radio-group" [(ngModel)]="favoriteSeason">
       <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
         {{season}}
       </mat-radio-button>
     </mat-radio-group>
-    <div class="example-selected-value">Your favorite season is: {{favoriteSeason}}</div>
-
     <mat-checkbox>Check me!</mat-checkbox>
 
-    <div>Your favorite season is: {{favoriteSeason}}</div>
+    <div class="example-selected-value">Your favorite season is: {{favoriteSeason}}</div>
 
     <router-outlet></router-outlet>
   </mat-sidenav-content>
