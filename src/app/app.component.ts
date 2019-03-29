@@ -12,7 +12,7 @@ export class AppComponent {
   seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
 
   constructor() {
-    console.log('test')
+    console.log('test');
   }
 
 }
