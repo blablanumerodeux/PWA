@@ -13,7 +13,8 @@ import {
   MatSidenavModule,
   MatToolbarModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatButtonModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
@@ -38,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+    MatButtonModule,
     GraphQLModule,
     HttpClientModule
   ],
