@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 /**
  * This component should be used to search a Journey
@@ -13,6 +13,10 @@ export class FindJourneyComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log('test');
   }
 
 }
