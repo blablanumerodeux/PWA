@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {JourneyComponent} from './components/journey/journey.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatCheckboxModule,
@@ -19,11 +18,20 @@ import {
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import {RouterModule, Routes} from '@angular/router';
+import {JourneyComponent} from './components/journey/journey.component';
+import {FindJourneyComponent} from './components/find-journey/find-journey.component';
+
+const appRoutes: Routes = [
+  { path: 'find-journey', component: FindJourneyComponent },
+];
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    JourneyComponent
+    JourneyComponent,
+    FindJourneyComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatListModule,
     MatButtonModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,7 +12,7 @@ export class AppComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
 
-  menu = ['find journey', 'create journey', 'list journey'];
+  menu = ['find-journey', 'create journey', 'list journey'];
 
   fillerNav = this.menu;
 
