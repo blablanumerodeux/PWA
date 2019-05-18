@@ -9,12 +9,12 @@ import {
   MatCheckboxModule,
   MatFormFieldModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatRadioModule,
   MatSelectModule,
   MatSidenavModule,
-  MatToolbarModule,
-  MatInputModule
+  MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {GraphQLModule} from './graphql.module';
@@ -53,8 +53,8 @@ const appRoutes: Routes = [
     GraphQLModule,
     HttpClientModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
+      // ,{ enableTracing: true } // <-- debugging purposes only
     )
   ],
   providers: [],

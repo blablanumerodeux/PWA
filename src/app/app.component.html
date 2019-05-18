@@ -5,7 +5,7 @@
     <button mat-icon-button color="warn" (click)="snav.toggle()">
       <mat-icon aria-label="Example icon-button with a menu icon">menu</mat-icon>
     </button>
-    <h1 class="example-app-name">{{title}}</h1>
+    <h1 class="input-box">{{title}}</h1>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container"
@@ -22,8 +22,6 @@
     <mat-sidenav-content>
 
       <router-outlet></router-outlet>
-
-      <p *ngFor="let content of fillerContent">{{content}}</p>
 
     </mat-sidenav-content>
 
