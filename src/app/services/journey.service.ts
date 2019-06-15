@@ -18,7 +18,7 @@ export class JourneyService {
    * search by id
    * @param id searched
    */
-  searchById(id: number): Observable<Journey> {
+  searchById(id: string): Observable<Journey> {
     const source$ = this.apollo.query({
       query: gql`
         query find{
