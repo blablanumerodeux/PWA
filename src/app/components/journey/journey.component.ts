@@ -11,7 +11,6 @@ export class JourneyComponent {
   @Input('journey') journey: Journey;
 
   constructor() {
-    console.log('journey constructor');
   }
 
 }
