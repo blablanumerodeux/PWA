@@ -8,11 +8,11 @@ import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 })
 export class AppComponent implements OnDestroy {
 
-  title = 'DaKar-ngFront';
+  title = 'homeless';
 
   mobileQuery: MediaQueryList;
 
-  menu = ['find-journey', 'create journey', 'list journey'];
+  menu = ['find-shelter', 'create journey', 'list journey'];
 
   fillerNav = this.menu;
 

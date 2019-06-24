@@ -1,9 +1,9 @@
 {
-  "name": "da-kar-ng-front",
+  "name": "homeless-front",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config ./proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
