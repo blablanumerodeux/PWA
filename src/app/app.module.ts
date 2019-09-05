@@ -20,6 +20,9 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {ShelterComponent} from './components/shelter/shelter.component';
 import {FindShelterComponent} from './components/find-shelter/find-shelter.component';
+import {environment} from '../environments/environment.prod';
+import {ServiceWorkerModule} from '@angular/service-worker';
+// import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   {path: 'find-shelter', component: FindShelterComponent},
@@ -51,7 +54,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
       // { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [],
   bootstrap: [AppComponent]

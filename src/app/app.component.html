@@ -22,6 +22,9 @@
   <mat-sidenav-content>
 
     <router-outlet></router-outlet>
+    <button class="button button-primary" (click)="subscribeToNotifications()">
+      Subscribe
+    </button>
 
     <p *ngFor="let content of fillerContent">{{content}}</p>
 
