@@ -25,6 +25,7 @@
     <button class="button button-primary" (click)="subscribeToNotifications()">
       Subscribe
     </button>
+    <button (click)="addToHomeScreen()" *ngIf="showButton">Add to Home Scree</button>
 
     <p *ngFor="let content of fillerContent">{{content}}</p>
 
