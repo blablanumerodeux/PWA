@@ -29,6 +29,6 @@ RUN npm run build
 FROM nginx:alpine
 
 #copy dist content to html nginx folder, config nginx to point in index.html
-COPY --from=node /usr/src/app/dist/DaKar-ngFront /usr/share/nginx/html
+COPY --from=node /usr/src/app/dist/homeless-front /usr/share/nginx/html
 
 #COPY ./nginx.conf /etc/nginx/conf.d/default.conf

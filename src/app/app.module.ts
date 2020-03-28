@@ -1,65 +1,34 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatCheckboxModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatToolbarModule
-} from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {GraphQLModule} from './graphql.module';
-import {HttpClientModule} from '@angular/common/http';
-import {RouterModule, Routes} from '@angular/router';
-import {JourneyComponent} from './components/journey/journey.component';
-import {FindJourneyComponent} from './components/find-journey/find-journey.component';
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
-const appRoutes: Routes = [
-  { path: 'find-journey', component: FindJourneyComponent },
-];
+import { ComponentsModule } from './components/components.module';
+import { ExamplesModule } from './examples/examples.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    JourneyComponent,
-    FindJourneyComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    ReactiveFormsModule,
+    NgbModule,
     FormsModule,
-    MatRadioModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonModule,
-    MatInputModule,
-    GraphQLModule,
-    HttpClientModule,
-    RouterModule.forRoot(
-      appRoutes
-      // ,{ enableTracing: true } // <-- debugging purposes only
-    )
+    RouterModule,
+    ComponentsModule,
+    ExamplesModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }
