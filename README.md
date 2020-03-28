@@ -12,7 +12,7 @@ https://codelabs.developers.google.com/codelabs/push-notifications/
 
 http-server -p 8080 -c-1 dist/homeless-front
 
-ng build --prod 
+ng build -- --prod 
 
  ng add @angular/pwa --project homeless-front 
  

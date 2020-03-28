@@ -28,7 +28,6 @@ const appRoutes: Routes = [
   {path: 'find-shelter', component: FindShelterComponent},
 ];
 
-
 @NgModule({
   declarations: [
     AppComponent,

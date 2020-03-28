@@ -1,6 +1,7 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, HostListener, OnDestroy} from '@angular/core';
 import {SwPush} from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,8 @@ export class AppComponent implements OnDestroy {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
+  GRAPHQL_URL = environment.serverUrl + 'graphql' ;
+
   title = 'homeless';
 
   mobileQuery: MediaQueryList;
@@ -25,14 +28,13 @@ export class AppComponent implements OnDestroy {
 
   fillerNav = this.menu;
 
-  fillerContent = Array.from({length: 50}, () =>
+  fillerContent = Array.from({length: 5}, () =>
     `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
 
   private _mobileQueryListener: () => void;
 
   VAPID_PUBLIC = 'BIlqlK3aGLFeO-yM_J-Xm9wSsofEhQNzI0DST00EDurfunKD9pRX8W7MlS3Y8OfXzyg1Onwv6yHaC3wVlIGfjdY';
-
 
   deferredPrompt: any;
   showButton = true;
@@ -42,9 +44,7 @@ export class AppComponent implements OnDestroy {
   }
 
 
-
   subscribeToNotifications() {
-
     console.log('app constructor');
     if (this.swPush.isEnabled) {
       console.log('enabled');
@@ -73,7 +73,6 @@ export class AppComponent implements OnDestroy {
     this.showButton = true;
   }
 
-
   addToHomeScreen() {
     // hide our user interface that shows our A2HS button
     this.showButton = false;
@@ -90,5 +89,4 @@ export class AppComponent implements OnDestroy {
         this.deferredPrompt = null;
       });
   }
-
 }
