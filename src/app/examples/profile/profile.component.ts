@@ -1,23 +1,32 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {BrowserModule} from '@angular/platform-browser';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.scss']
 })
-
 export class ProfileComponent implements OnInit {
 
-  private _bookListUrl = 'https://www.googleapis.com/books/v1/volumes?q=extreme%20programming';
+  private uri = '/api/v1/shelters';
+  private sheltersList;
 ​
   constructor(private _httpClient: HttpClient) {
   }
 ​
   ngOnInit() {
-    this._httpClient.get(this._bookListUrl);
-    console.log("YEAHHHH")
+    var headers_object = new HttpHeaders();
+    headers_object.append('Content-Type', 'application/json');
+    headers_object.append('Authorization', 'Basic ' + btoa('admin:nimda'));
+
+    const httpOptions = {
+      headers: headers_object
+    };
+    this._httpClient.get(this.uri, httpOptions)
+      .subscribe(sheltersList => {
+        this.sheltersList = sheltersList;
+        console.log(this.sheltersList);
+      });
   }
-​
 }
