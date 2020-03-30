@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://homeless-api.project.lambla.eu",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
